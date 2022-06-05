@@ -1,0 +1,268 @@
+﻿@model RDKSDatabase.ViewModels.CustomerInfo
+@using RDKSDatabase.Models;
+
+@{
+    ViewData["Title"] = "Customer Related Info";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h4>Customer Info</h4>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SelectedCustomer.CUS_ACCNUM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SelectedCustomer.CUS_COMPNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SelectedCustomer.CUS_FNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SelectedCustomer.CUS_LNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SelectedCustomer.CUS_PHONE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SelectedCustomer.CUS_EMAIL)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    @{
+        int cus_id = Model.SelectedCustomer.CUS_ID;
+    }
+
+    <tbody>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.SelectedCustomer.CUS_ACCNUM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.SelectedCustomer.CUS_COMPNAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.SelectedCustomer.CUS_FNAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.SelectedCustomer.CUS_LNAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.SelectedCustomer.CUS_PHONE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.SelectedCustomer.CUS_EMAIL)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@cus_id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@cus_id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@cus_id">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Address Info</h4>
+
+@if (Model.Addresses.Any())
+{
+    Address address = Model.Addresses.First();
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => address.ADDR_STREET)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => address.ADDR_CITY)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => address.ADDR_PROV)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => address.ADDR_POCODE)
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model.Addresses) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ADDR_STREET)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ADDR_CITY)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ADDR_PROV)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ADDR_POCODE)
+                    </td>
+                    <td>
+                        <a asp-controller="Addresses" asp-action="Edit" asp-route-id="@item.ADDR_ID">Edit</a> |
+                        <a asp-controller="Addresses" asp-action="Details" asp-route-id="@item.ADDR_ID">Details</a> |
+                        <a asp-controller="Addresses" asp-action="Delete" asp-route-id="@item.ADDR_ID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+} 
+else
+{
+    <p>
+        No Records Found!
+    </p>
+}
+
+<h4>Permit Info</h4>
+
+@if (Model.Permits.Any())
+{
+    Permit permit = Model.Permits.First();
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => permit.PermitNumberPrefix)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => permit.PermitNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => permit.ApplicantName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => permit.ApplicantPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => permit.ApplicantEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => permit.ExpirationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => permit.FacilityCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => permit.Frequency)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => permit.PermitApplicationDate)
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model.Permits) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PermitNumberPrefix)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PermitNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApplicantName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApplicantPhone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApplicantEmail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FacilityCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Frequency)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PermitApplicationDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ExpirationDate)
+                    </td>
+                    <td>
+                        <a asp-controller="Permits" asp-action="Edit" asp-route-prefix="@item.PermitNumberPrefix" asp-route-id="@item.PermitNumber">Edit</a> |
+                        <a asp-controller="Permits" asp-action="Details" asp-route-prefix="@item.PermitNumberPrefix" asp-route-id="@item.PermitNumber">Details</a> |
+                        <a asp-controller="Permits" asp-action="Delete" asp-route-prefix="@item.PermitNumberPrefix" asp-route-id="@item.PermitNumber">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+} 
+else
+{
+    <p>
+        No Records Found!
+    </p>
+}
+
+<h4>Vehicle Info</h4>
+
+@if (Model.Vehicles.Any())
+{
+    Vehicle vehicle = Model.Vehicles.First();
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => vehicle.LICENSE_PLATE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => vehicle.DESCRIPTION)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => vehicle.BADGE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => vehicle.NOTES)
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model.Vehicles) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LICENSE_PLATE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DESCRIPTION)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BADGE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NOTES)
+                    </td>
+                    <td>
+                        <a asp-controller="Vehicles" asp-action="Edit" asp-route-id="@item.LICENSE_PLATE">Edit</a> |
+                        <a asp-controller="Vehicles" asp-action="Details" asp-route-id="@item.LICENSE_PLATE">Details</a> |
+                        <a asp-controller="Vehicles" asp-action="Delete" asp-route-id="@item.LICENSE_PLATE">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+} 
+else
+{
+    <p>
+        No Records Found!
+    </p>
+}
+<form asp-action="Index" method="get">
+    <input type="submit" value="Back to full list" class="btn btn-default" style="background: lightblue"/>
+</form> 

@@ -1,0 +1,74 @@
+﻿@model IEnumerable<RDKSDatabase.Models.Vehicle>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Vehicles</h1>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Search by License Plate: <input type="text" name="SearchString1" value="@ViewData["CurrentFilter1"]"/>
+            Search by Badge: <input type="text" name="SearchString2" value="@ViewData["CurrentFilter2"]" />
+            <input type="submit" value="Search" class="btn btn-default" style="background: lightblue"/>
+        </p>
+    </div>
+</form>
+
+<form>
+    <input asp-action="Create" type="submit" value="Create new record" class="btn btn-default" style="background: lightblue"/>
+</form>
+<br />
+<form>
+    <input asp-action="Index" type="submit" value="Back to full list" class="btn btn-default" style="background: lightblue"/>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LICENSE_PLATE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DESCRIPTION)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BADGE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOTES)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOTES_2)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LICENSE_PLATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DESCRIPTION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BADGE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOTES)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOTES_2)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.LICENSE_PLATE">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.LICENSE_PLATE">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.LICENSE_PLATE">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

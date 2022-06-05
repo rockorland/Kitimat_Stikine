@@ -1,0 +1,121 @@
+﻿@model IEnumerable<RDKSDatabase.Models.Validation>
+
+@{
+    ViewData["Title"] = "Import Codes";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+
+<form asp-action="GenerateCode" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Enter the material group : <input type="text" name="material_group" value="@ViewData["material_group"]" />
+            Enter the facility : <input type="text" name="facility" value="@ViewData["facility"]" />
+            <input type="submit" value="Search" class="btn btn-default" style="background: lightblue"/> 
+        </p>
+    </div>
+</form>
+
+<form>
+    <input asp-action="Create" type="submit" value="Create new record" class="btn btn-default" style="background: lightblue"/>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VALID_IMPORT_CODE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VALID_MATERIAL_NAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VALID_FACILITY)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VALID_MATERIAL_GROUP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VALID_IN_AND_OUT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VALID_AIRSPACE_OR_NONAIRSPACE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VALID_FUNCTION)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VALID_CURBSIED_AREA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VALID_CURBSIDE_STREAM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VALID_FR_ANNUAL_REPORTING_GROUP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VALID_FR_ANNUAL_REPORT_WASTE_TYPE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VALID_TIPPING_RATE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VALID_SERVICE_AREA)
+            </th>
+
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VALID_IMPORT_CODE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VALID_MATERIAL_NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VALID_FACILITY)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VALID_MATERIAL_GROUP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VALID_IN_AND_OUT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VALID_AIRSPACE_OR_NONAIRSPACE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VALID_FUNCTION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VALID_CURBSIED_AREA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VALID_CURBSIDE_STREAM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VALID_FR_ANNUAL_REPORTING_GROUP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VALID_FR_ANNUAL_REPORT_WASTE_TYPE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VALID_TIPPING_RATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VALID_SERVICE_AREA)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.VALID_IMPORT_CODE">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.VALID_IMPORT_CODE">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.VALID_IMPORT_CODE">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

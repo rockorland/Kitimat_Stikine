@@ -1,0 +1,94 @@
+﻿@model RDKSDatabase.Models.Customer
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Customer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CUS_ID" />
+            <div class="form-group">
+                <label asp-for="CUS_ACCNUM" class="control-label"></label>
+                <input asp-for="CUS_ACCNUM" class="form-control" />
+                <span asp-validation-for="CUS_ACCNUM" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CUS_COMPNAME" class="control-label"></label>
+                <input asp-for="CUS_COMPNAME" class="form-control" />
+                <span asp-validation-for="CUS_COMPNAME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CUS_FNAME" class="control-label"></label>
+                <input asp-for="CUS_FNAME" class="form-control" />
+                <span asp-validation-for="CUS_FNAME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CUS_LNAME" class="control-label"></label>
+                <input asp-for="CUS_LNAME" class="form-control" />
+                <span asp-validation-for="CUS_LNAME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CUS_PHONE" class="control-label"></label>
+                <input asp-for="CUS_PHONE" class="form-control" />
+                <span asp-validation-for="CUS_PHONE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CUS_ALT_PHONE" class="control-label"></label>
+                <input asp-for="CUS_ALT_PHONE" class="form-control" />
+                <span asp-validation-for="CUS_ALT_PHONE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CUS_EMAIL" class="control-label"></label>
+                <input asp-for="CUS_EMAIL" class="form-control" />
+                <span asp-validation-for="CUS_EMAIL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CUS_ALT_EMAIL" class="control-label"></label>
+                <input asp-for="CUS_ALT_EMAIL" class="form-control" />
+                <span asp-validation-for="CUS_ALT_EMAIL" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="CUS_FR" /> @Html.DisplayNameFor(model => model.CUS_FR)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="CUS_TTS" /> @Html.DisplayNameFor(model => model.CUS_TTS)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="CUS_MEZ" /> @Html.DisplayNameFor(model => model.CUS_MEZ)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="CUS_DEACTIVATED_COUNT" class="control-label"></label>
+                <input asp-for="CUS_DEACTIVATED_COUNT" class="form-control" />
+                <span asp-validation-for="CUS_DEACTIVATED_COUNT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CUS_NOTE" class="control-label"></label>
+                <input asp-for="CUS_NOTE" class="form-control" />
+                <span asp-validation-for="CUS_NOTE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

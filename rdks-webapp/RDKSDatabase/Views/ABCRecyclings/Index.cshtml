@@ -1,0 +1,86 @@
+﻿@model IEnumerable<RDKSDatabase.Models.ABCRecycling>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>ABC Recycling</h1>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Start date: <input type="date" name="SearchString1" value="@ViewData["CurrentFilter1"]" />
+            End date: <input type="date" name="SearchString2" value="@ViewData["CurrentFilter2"]" />
+            <input type="submit" value="Search" class="btn btn-default" style="background: lightblue"/>
+        </p>
+    </div>
+</form>
+
+<form>
+    <input asp-action="Create" type="submit" value="Create new record" class="btn btn-default" style="background: lightblue"/>
+</form>
+<br />
+<form>
+    <input asp-action="Index" type="submit" value="Back to full list" class="btn btn-default" style="background: lightblue"/>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]">@Html.DisplayNameFor(model => model.ABCDateID)</a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ABC_LOCATION)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ABC_MATERIAL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TOTAL_POUND_NETWEIGHT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TOTAL_TONNAGE_NETWEIGHT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TOTAL_TONNAGE_MATERIAL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ABC_COMPLETED)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ABCDateID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ABC_LOCATION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ABC_MATERIAL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TOTAL_POUND_NETWEIGHT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TOTAL_TONNAGE_NETWEIGHT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TOTAL_TONNAGE_MATERIAL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ABC_COMPLETED)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ABCDateID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ABCDateID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ABCDateID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

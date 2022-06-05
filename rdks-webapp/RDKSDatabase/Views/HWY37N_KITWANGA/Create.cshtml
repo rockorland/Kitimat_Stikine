@@ -1,0 +1,148 @@
+﻿@model RDKSDatabase.Models.HWY37N_KITWANGA
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>HWY37N_KITWANGA</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="HWY_KIT_DATE" class="control-label"></label>
+                <input asp-for="HWY_KIT_DATE" class="form-control" />
+                <span asp-validation-for="HWY_KIT_DATE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_KIT_OCC_TONNAGE_EST" class="control-label"></label>
+                <input asp-for="HWY_KIT_OCC_TONNAGE_EST" class="form-control" />
+                <span asp-validation-for="HWY_KIT_OCC_TONNAGE_EST" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_KIT_PPP_TONNAGE" class="control-label"></label>
+                <input asp-for="HWY_KIT_PPP_TONNAGE" class="form-control" />
+                <span asp-validation-for="HWY_KIT_PPP_TONNAGE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_KIT_OCC_HAULING_BIN_RENTAL" class="control-label"></label>
+                <input asp-for="HWY_KIT_OCC_HAULING_BIN_RENTAL" class="form-control" />
+                <span asp-validation-for="HWY_KIT_OCC_HAULING_BIN_RENTAL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_KIT_PPP_HAULING" class="control-label"></label>
+                <input asp-for="HWY_KIT_PPP_HAULING" class="form-control" />
+                <span asp-validation-for="HWY_KIT_PPP_HAULING" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_KIT_RECYCLE_BC_TONNAGE" class="control-label"></label>
+                <input asp-for="HWY_KIT_RECYCLE_BC_TONNAGE" class="form-control" />
+                <span asp-validation-for="HWY_KIT_RECYCLE_BC_TONNAGE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_KIT_CESA_TONNES" class="control-label"></label>
+                <input asp-for="HWY_KIT_CESA_TONNES" class="form-control" />
+                <span asp-validation-for="HWY_KIT_CESA_TONNES" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_KIT_EPRA_TONNES" class="control-label"></label>
+                <input asp-for="HWY_KIT_EPRA_TONNES" class="form-control" />
+                <span asp-validation-for="HWY_KIT_EPRA_TONNES" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_KIT_LIGHT_RECYCLE_COUNTS" class="control-label"></label>
+                <input asp-for="HWY_KIT_LIGHT_RECYCLE_COUNTS" class="form-control" />
+                <span asp-validation-for="HWY_KIT_LIGHT_RECYCLE_COUNTS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_KIT_PAINT_RECYCLE_COUNTS" class="control-label"></label>
+                <input asp-for="HWY_KIT_PAINT_RECYCLE_COUNTS" class="form-control" />
+                <span asp-validation-for="HWY_KIT_PAINT_RECYCLE_COUNTS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_KIT_SCRAP_METAL_MARR_INCLUDED" class="control-label"></label>
+                <input asp-for="HWY_KIT_SCRAP_METAL_MARR_INCLUDED" class="form-control" />
+                <span asp-validation-for="HWY_KIT_SCRAP_METAL_MARR_INCLUDED" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_KIT_LAB_TONNES" class="control-label"></label>
+                <input asp-for="HWY_KIT_LAB_TONNES" class="form-control" />
+                <span asp-validation-for="HWY_KIT_LAB_TONNES" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_KIT_TIRE_COUNTS" class="control-label"></label>
+                <input asp-for="HWY_KIT_TIRE_COUNTS" class="form-control" />
+                <span asp-validation-for="HWY_KIT_TIRE_COUNTS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_KIT_TIRE_CHARGES" class="control-label"></label>
+                <input asp-for="HWY_KIT_TIRE_CHARGES" class="form-control" />
+                <span asp-validation-for="HWY_KIT_TIRE_CHARGES" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_KIT_FREON_REMOVAL_CHARGES" class="control-label"></label>
+                <input asp-for="HWY_KIT_FREON_REMOVAL_CHARGES" class="form-control" />
+                <span asp-validation-for="HWY_KIT_FREON_REMOVAL_CHARGES" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_KIT_RECYCLE_BC_INCOME" class="control-label"></label>
+                <input asp-for="HWY_KIT_RECYCLE_BC_INCOME" class="form-control" />
+                <span asp-validation-for="HWY_KIT_RECYCLE_BC_INCOME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_KIT_CESA_INCOME" class="control-label"></label>
+                <input asp-for="HWY_KIT_CESA_INCOME" class="form-control" />
+                <span asp-validation-for="HWY_KIT_CESA_INCOME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_KIT_EPRA_INCOME" class="control-label"></label>
+                <input asp-for="HWY_KIT_EPRA_INCOME" class="form-control" />
+                <span asp-validation-for="HWY_KIT_EPRA_INCOME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_KIT_LIGHT_RECYCLE_INCOME" class="control-label"></label>
+                <input asp-for="HWY_KIT_LIGHT_RECYCLE_INCOME" class="form-control" />
+                <span asp-validation-for="HWY_KIT_LIGHT_RECYCLE_INCOME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_KIT_PAINT_RECYCLE_INCOME" class="control-label"></label>
+                <input asp-for="HWY_KIT_PAINT_RECYCLE_INCOME" class="form-control" />
+                <span asp-validation-for="HWY_KIT_PAINT_RECYCLE_INCOME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_KIT_MARR_INCOME" class="control-label"></label>
+                <input asp-for="HWY_KIT_MARR_INCOME" class="form-control" />
+                <span asp-validation-for="HWY_KIT_MARR_INCOME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_KIT_LAB_INCOME" class="control-label"></label>
+                <input asp-for="HWY_KIT_LAB_INCOME" class="form-control" />
+                <span asp-validation-for="HWY_KIT_LAB_INCOME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_KIT_TOTAL_TONNES_EPR" class="control-label"></label>
+                <input asp-for="HWY_KIT_TOTAL_TONNES_EPR" class="form-control" />
+                <span asp-validation-for="HWY_KIT_TOTAL_TONNES_EPR" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_KIT_NET_INCOME" class="control-label"></label>
+                <input asp-for="HWY_KIT_NET_INCOME" class="form-control" />
+                <span asp-validation-for="HWY_KIT_NET_INCOME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

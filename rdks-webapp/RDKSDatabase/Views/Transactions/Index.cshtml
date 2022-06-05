@@ -1,0 +1,63 @@
+﻿@model  IEnumerable<RDKSDatabase.Models.Transaction>
+
+@{
+    ViewData["Title"] = "transactions";
+}
+
+<h1>Transactions</h1>
+
+<form asp-action="Index" asp-controller="Transactions">
+    <p>
+        Transanction Number: <input type="text" name="tranNum"/>
+        <input type="submit" value="Search"  class="btn btn-default" style="background: lightblue"/>
+    </p>
+</form>
+
+<form>
+    <input asp-action="Create" type="submit" value="Create new record" class="btn btn-default" style="background: lightblue"/>
+</form>
+<br />
+<form>
+    <input asp-action="Index" type="submit" value="Back to full list" class="btn btn-default" style="background: lightblue"/>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TRANS_NUM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TRANS_TOTALPRICE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CUS_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LICENSE_PLATE)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+            string selecteRow = "";
+            if (item.TRANS_NUM.Equals((ViewData["TransactionID"])))
+            {
+                selecteRow = "table-success";
+            }
+            <tr class="@selecteRow">
+                <td>@Html.DisplayFor(modelItem => item.TRANS_NUM)</td>
+                <td>@Html.DisplayFor(modelItem => item.TRANS_TOTALPRICE)</td>
+                <td> @Html.DisplayFor(modelItem => item.CUS_ID)</td>
+                <td>@Html.DisplayFor(modelItem => item.LICENSE_PLATE)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.TRANS_NUM">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.TRANS_NUM">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.TRANS_NUM">Delete</a>
+                </td>
+            </tr>
+}
+    </tbody>
+</table>
+

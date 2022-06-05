@@ -1,0 +1,195 @@
+﻿@model RDKSDatabase.Models.Permit
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Permit</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PermitNumberPrefix" class="control-label"></label>
+                <input asp-for="PermitNumberPrefix" class="form-control" />
+                <span asp-validation-for="PermitNumberPrefix" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PermitNumber" class="control-label"></label>
+                <input asp-for="PermitNumber" class="form-control" />
+                <span asp-validation-for="PermitNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FacilityCode" class="control-label"></label>
+                <select asp-for="FacilityCode" class="form-control" asp-items="Html.GetEnumSelectList<FacilityCode>()">
+                  <option>Select Facility code</option>
+                </select>
+                <span asp-validation-for="FacilityCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PermitApplicationDate" class="control-label"></label>
+                <input asp-for="PermitApplicationDate" class="form-control" />
+                <span asp-validation-for="PermitApplicationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstimatedVolume" class="control-label"></label>
+                <input asp-for="EstimatedVolume" class="form-control" />
+                <span asp-validation-for="EstimatedVolume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="units" class="control-label"></label>
+                <select asp-for="units" class="form-control" asp-items="Html.GetEnumSelectList<Units>()">
+                     <option>Select Units</option>
+                </select>
+                <span asp-validation-for="units" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstimatedLoads" class="control-label"></label>
+                <input asp-for="EstimatedLoads" class="form-control" />
+                <span asp-validation-for="EstimatedLoads" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Frequency" class="control-label"></label>
+                <select asp-for="Frequency" class="form-control" asp-items="Html.GetEnumSelectList<Frequency>()">
+                    <option>Select Frequency</option>
+
+                </select>
+                <span asp-validation-for="Frequency" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comments" class="control-label"></label>
+                <input asp-for="Comments" class="form-control" />
+                <span asp-validation-for="Comments" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContaminateLoadsDate" class="control-label"></label>
+                <input asp-for="ContaminateLoadsDate" class="form-control" />
+                <span asp-validation-for="ContaminateLoadsDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContaminateLoadsComments" class="control-label"></label>
+                <input asp-for="ContaminateLoadsComments" class="form-control" />
+                <span asp-validation-for="ContaminateLoadsComments" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContaminatedLoads" class="control-label"></label>
+                <select asp-for="ContaminatedLoads" class="form-control" asp-items="Html.GetEnumSelectList<ContaminatedLoads>()">
+                    <option>Select Contaminated Loads</option>
+                </select>
+                <span asp-validation-for="ContaminatedLoads" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PermitSentToOperatorAndWMF" class="control-label"></label>
+                <select asp-for="PermitSentToOperatorAndWMF" class="form-control" asp-items="Html.GetEnumSelectList<PermitSentToOperatorAndWMF>()" >
+                    <option>Permit Sent To Operato rAnd WMF?</option>
+                </select>
+                <span asp-validation-for="PermitSentToOperatorAndWMF" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PermitSavedOnServerAndFiled" class="control-label"></label>
+                <select asp-for="PermitSavedOnServerAndFiled" class="form-control" asp-items="Html.GetEnumSelectList<HardCopyPermitSavedInFile>()">
+                    <option>Hard Copy Permit Saved In File?</option>
+                </select>
+                <span asp-validation-for="PermitSavedOnServerAndFiled" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HardCopyPermitSavedInFile" class="control-label"></label>
+                <select asp-for="HardCopyPermitSavedInFile" class="form-control" asp-items="Html.GetEnumSelectList<PermitSavedOnServerAndFiled>()">
+                     <option>Permit Saved On Server And Filed?</option>
+                </select>
+                <span asp-validation-for="HardCopyPermitSavedInFile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApprovedBy" class="control-label"></label>
+                <input asp-for="ApprovedBy" class="form-control" />
+                <span asp-validation-for="ApprovedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PermitClosedCardPermissionsRevolked" class="control-label"></label>
+                <input asp-for="PermitClosedCardPermissionsRevolked" class="form-control" />
+                <span asp-validation-for="PermitClosedCardPermissionsRevolked" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PermitStatus" class="control-label"></label>
+                <select asp-for="PermitStatus" class="form-control" asp-items="Html.GetEnumSelectList<PermitStatus>()">
+                    <option>Select Permit Status</option>
+                </select>
+                <span asp-validation-for="PermitStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PermitType" class="control-label"></label>
+                <input asp-for="PermitType" class="form-control" />
+                <span asp-validation-for="PermitType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PermitFee" class="control-label"></label>
+                <input asp-for="PermitFee" class="form-control" />
+                <span asp-validation-for="PermitFee" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExpirationDate" class="control-label"></label>
+                <input asp-for="ExpirationDate" class="form-control" />
+                <span asp-validation-for="ExpirationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApplicationFeeInvoiced" class="control-label"></label>
+                <select asp-for="ApplicationFeeInvoiced" class="form-control" asp-items="Html.GetEnumSelectList<ApplicationFeeInvoiced>()">
+                    <option>Application Fee Invoiced</option>
+                </select>
+                <span asp-validation-for="ApplicationFeeInvoiced" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApplicantName" class="control-label"></label>
+                <input asp-for="ApplicantName" class="form-control" />
+                <span asp-validation-for="ApplicantName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApplicantPhone" class="control-label"></label>
+                <input asp-for="ApplicantPhone" class="form-control" />
+                <span asp-validation-for="ApplicantPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApplicantEmail" class="control-label"></label>
+                <input asp-for="ApplicantEmail" class="form-control" />
+                <span asp-validation-for="ApplicantEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hauler" class="control-label"></label>
+                <input asp-for="Hauler" class="form-control" />
+                <span asp-validation-for="Hauler" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hauler2" class="control-label"></label>
+                <input asp-for="Hauler2" class="form-control" />
+                <span asp-validation-for="Hauler2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CUS_ID" class="control-label"></label>
+                <select asp-for="CUS_ID" class ="form-control" asp-items="ViewBag.CUS_ID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="WasteGenerator" class="control-label"></label>
+                <input asp-for="WasteGenerator" class="form-control" />
+                <span asp-validation-for="WasteGenerator" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaterialCode" class="control-label"></label>
+                <select asp-for="MaterialCode" class ="form-control" asp-items="ViewBag.MaterialCode"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

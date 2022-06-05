@@ -1,0 +1,82 @@
+﻿@model IEnumerable<RDKSDatabase.Models.Permit>
+@using RDKSDatabase.Models
+
+@{
+    ViewData["Title"] = "Permits";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Filter by Permit Prefix: <input type="text" name="search_prefix" value="@ViewData["prefix"]" />
+            Filter by Facility: <input type="text" name="search_facility" value="@ViewData["facility"]" />
+            <input type="submit" value="Search" class="btn btn-default" style="background: lightblue"/>
+        </p>
+    </div>
+</form>
+
+<form>
+    <input asp-action="Create" type="submit" value="Create new record" class="btn btn-default" style="background: lightblue"/>
+</form>
+<br />
+<form>
+    <input asp-action="Index" type="submit" value="Back to full list" class="btn btn-default" style="background: lightblue"/>
+</form>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["SortParm"]">@Html.DisplayNameFor(model => model.PermitNumberPrefix)</a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PermitNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FacilityCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PermitApplicationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpirationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CUS_ID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PermitNumberPrefix)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PermitNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FacilityCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PermitApplicationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpirationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CUS_ID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { prefix=item.PermitNumberPrefix, id=item.PermitNumber }, null) |
+                @Html.ActionLink("Details", "Details",  new { prefix=item.PermitNumberPrefix, id=item.PermitNumber }, null) |
+                @Html.ActionLink("Delete", "Delete",  new { prefix=item.PermitNumberPrefix, id=item.PermitNumber }, null)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

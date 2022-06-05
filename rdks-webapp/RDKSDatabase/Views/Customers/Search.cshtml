@@ -1,0 +1,67 @@
+﻿@model RDKSDatabase.ViewModels.CustomerInfo
+@using RDKSDatabase.Models;
+
+@{
+    ViewData["Title"] = "Find Customer Related Info";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="Search" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by Account Number: <input type="text" name="cus_accnum" value="@ViewData["search_accnum"]" />
+            Find by Company Name: <input type="text" name="cus_compname" value="@ViewData["search_compname"]" />
+            <input type="submit" value="Search" class="btn btn-default" style="background: lightblue"/>
+        </p>
+    </div>
+</form>
+
+<form>
+    <input asp-action="Index" type="submit" value="Back to full list" class="btn btn-default" style="background: lightblue"/>
+</form>
+
+<h4>Customer Info</h4>
+
+@if (ViewData["recordFound"].Equals(true))
+{
+    Customer customer = Model.Results.First();
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => customer.CUS_ACCNUM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => customer.CUS_COMPNAME)
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model.Results) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CUS_ACCNUM)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CUS_COMPNAME)
+                    </td>
+                    <td>
+                        <a asp-action="InfoPage" asp-route-id="@item.CUS_ID">Select</a>
+                        <a asp-action="Edit" asp-route-id="@item.CUS_ID">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.CUS_ID">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.CUS_ID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+} 
+else
+{
+    <p>
+        No Records Found!
+    </p>
+}

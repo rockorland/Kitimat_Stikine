@@ -1,0 +1,91 @@
+﻿@model IEnumerable<RDKSDatabase.Models.Customer>
+
+@{
+    ViewData["Title"] = "Customers";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h4>Find Customer Related Info</h4>
+
+<form asp-action="Search" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by Account Number: <input type="text" name="cus_accnum" />
+            Find by Company Name: <input type="text" name="cus_compname" />
+            <input type="submit" value="Search" class="btn btn-default" style="background: lightblue"/>
+        </p>
+    </div>
+</form>
+
+<form>
+    <input asp-action="Create" type="submit" value="Create new record" class="btn btn-default" style="background: lightblue"/>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CUS_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CUS_ACCNUM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CUS_COMPNAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CUS_FR)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CUS_TTS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CUS_MEZ)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CUS_DEACTIVATED_COUNT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CUS_NOTE)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+             <td>
+                @Html.DisplayFor(modelItem => item.CUS_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CUS_ACCNUM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CUS_COMPNAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CUS_FR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CUS_TTS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CUS_MEZ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CUS_DEACTIVATED_COUNT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CUS_NOTE)
+            </td>
+            <td>
+                <a asp-action="InfoPage" asp-route-id="@item.CUS_ID">Select</a>
+                <a asp-action="Edit" asp-route-id="@item.CUS_ID">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.CUS_ID">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.CUS_ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

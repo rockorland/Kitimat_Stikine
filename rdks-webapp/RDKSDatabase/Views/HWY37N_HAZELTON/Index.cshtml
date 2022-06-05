@@ -1,0 +1,98 @@
+﻿@model IEnumerable<RDKSDatabase.Models.HWY37N_HAZELTON>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Hwy37N Hazelton</h1>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Start date: <input type="date" name="SearchString1" value="@ViewData["CurrentFilter1"]" />
+            End date: <input type="date" name="SearchString2" value="@ViewData["CurrentFilter2"]" />
+            <input type="submit" value="Search" class="btn btn-default" style="background: lightblue"/>
+        </p>
+    </div>
+</form>
+
+<form>
+    <input asp-action="Create" type="submit" value="Create new record" class="btn btn-default" style="background: lightblue"/>
+</form>
+<br />
+<form>
+    <input asp-action="Index" type="submit" value="Back to full list" class="btn btn-default" style="background: lightblue"/>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]">@Html.DisplayNameFor(model => model.HWY_HAZ_DATE)</a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HWY_HAZ_EST_OCC_TONNES)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HWY_HAZ_OCC_BIN_BILLING)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HWY_HAZ_SCRAP_METAL_TONNES)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HWY_HAZ_TIRE_COUNTS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HWY_HAZ_TIRE_COLLECTION_CHARGES)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HWY_HAZ_FREON_REMOVAL_CHARGES)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HWY_HAZ_MARR_INCOME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HWY_HAZ_ABC_INCOME)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HWY_HAZ_DATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HWY_HAZ_EST_OCC_TONNES)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HWY_HAZ_OCC_BIN_BILLING)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HWY_HAZ_SCRAP_METAL_TONNES)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HWY_HAZ_TIRE_COUNTS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HWY_HAZ_TIRE_COLLECTION_CHARGES)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HWY_HAZ_FREON_REMOVAL_CHARGES)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HWY_HAZ_MARR_INCOME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HWY_HAZ_ABC_INCOME)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.HWY_HAZ_DATE">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.HWY_HAZ_DATE">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.HWY_HAZ_DATE">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

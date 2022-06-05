@@ -1,0 +1,159 @@
+﻿@model RDKSDatabase.Models.HWY37N_KITWANGA
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>HWY37N_KITWANGA</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HWY_KIT_OCC_TONNAGE_EST)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HWY_KIT_OCC_TONNAGE_EST)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HWY_KIT_PPP_TONNAGE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HWY_KIT_PPP_TONNAGE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HWY_KIT_OCC_HAULING_BIN_RENTAL)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HWY_KIT_OCC_HAULING_BIN_RENTAL)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HWY_KIT_PPP_HAULING)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HWY_KIT_PPP_HAULING)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HWY_KIT_RECYCLE_BC_TONNAGE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HWY_KIT_RECYCLE_BC_TONNAGE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HWY_KIT_CESA_TONNES)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HWY_KIT_CESA_TONNES)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HWY_KIT_EPRA_TONNES)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HWY_KIT_EPRA_TONNES)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HWY_KIT_LIGHT_RECYCLE_COUNTS)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HWY_KIT_LIGHT_RECYCLE_COUNTS)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HWY_KIT_PAINT_RECYCLE_COUNTS)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HWY_KIT_PAINT_RECYCLE_COUNTS)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HWY_KIT_SCRAP_METAL_MARR_INCLUDED)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HWY_KIT_SCRAP_METAL_MARR_INCLUDED)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HWY_KIT_LAB_TONNES)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HWY_KIT_LAB_TONNES)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HWY_KIT_TIRE_COUNTS)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HWY_KIT_TIRE_COUNTS)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HWY_KIT_TIRE_CHARGES)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HWY_KIT_TIRE_CHARGES)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HWY_KIT_FREON_REMOVAL_CHARGES)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HWY_KIT_FREON_REMOVAL_CHARGES)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HWY_KIT_RECYCLE_BC_INCOME)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HWY_KIT_RECYCLE_BC_INCOME)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HWY_KIT_CESA_INCOME)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HWY_KIT_CESA_INCOME)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HWY_KIT_EPRA_INCOME)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HWY_KIT_EPRA_INCOME)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HWY_KIT_LIGHT_RECYCLE_INCOME)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HWY_KIT_LIGHT_RECYCLE_INCOME)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HWY_KIT_PAINT_RECYCLE_INCOME)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HWY_KIT_PAINT_RECYCLE_INCOME)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HWY_KIT_MARR_INCOME)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HWY_KIT_MARR_INCOME)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HWY_KIT_LAB_INCOME)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HWY_KIT_LAB_INCOME)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HWY_KIT_TOTAL_TONNES_EPR)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HWY_KIT_TOTAL_TONNES_EPR)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HWY_KIT_NET_INCOME)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HWY_KIT_NET_INCOME)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="HWY_KIT_DATE" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

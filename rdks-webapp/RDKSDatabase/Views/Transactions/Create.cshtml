@@ -1,0 +1,232 @@
+﻿@model RDKSDatabase.Models.Transaction
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Transaction</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TRANS_NUM" class="control-label"></label>
+                <input asp-for="TRANS_NUM" class="form-control" />
+                <span asp-validation-for="TRANS_NUM" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CUS_ID" class="control-label"></label>
+                <select asp-for="CUS_ID" class ="form-control" asp-items="ViewBag.CUS_ID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="LICENSE_PLATE" class="control-label"></label>
+                <input asp-for="LICENSE_PLATE" class="form-control" />
+                <span asp-validation-for="LICENSE_PLATE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_COMPLETION_DATE" class="control-label"></label>
+                <input asp-for="TRANS_COMPLETION_DATE" class="form-control" />
+                <span asp-validation-for="TRANS_COMPLETION_DATE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_COMPLETION_TIME" class="control-label"></label>
+                <input asp-for="TRANS_COMPLETION_TIME" class="form-control" />
+                <span asp-validation-for="TRANS_COMPLETION_TIME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_LOAD_NUM" class="control-label"></label>
+                <input asp-for="TRANS_LOAD_NUM" class="form-control" />
+                <span asp-validation-for="TRANS_LOAD_NUM" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_NETWEIGHT" class="control-label"></label>
+                <input asp-for="TRANS_NETWEIGHT" class="form-control" />
+                <span asp-validation-for="TRANS_NETWEIGHT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_TOTALPRICE" class="control-label"></label>
+                <input asp-for="TRANS_TOTALPRICE" class="form-control" />
+                <span asp-validation-for="TRANS_TOTALPRICE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_HAULER" class="control-label"></label>
+                <input asp-for="TRANS_HAULER" class="form-control" />
+                <span asp-validation-for="TRANS_HAULER" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="TRANS_DRIVER_EXEMPT_STATUS" /> @Html.DisplayNameFor(model => model.TRANS_DRIVER_EXEMPT_STATUS)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="VALID_IMPORT_CODE" class="control-label"></label>
+                <input asp-for="VALID_IMPORT_CODE" class="form-control" />
+                <span asp-validation-for="VALID_IMPORT_CODE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_CONTRACT" class="control-label"></label>
+                <input asp-for="TRANS_CONTRACT" class="form-control" />
+                <span asp-validation-for="TRANS_CONTRACT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_OPERATION" class="control-label"></label>
+                <select asp-for="TRANS_OPERATION" class="form-control" >
+                    <option>Operation status..</option>
+                    <option>Received</option>
+                    <option>Shipped</option>
+                    <option>Either</option>
+                </select>
+                <span asp-validation-for="TRANS_OPERATION" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_STATUS" class="control-label"></label>
+                <select asp-for="TRANS_STATUS" class="form-control" >
+                    <option>Transaction status...</option>
+                    <option>Complete</option>
+                    <option>Modified</option>
+                    <option>Void</option>
+                </select>
+                <span asp-validation-for="TRANS_STATUS" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="TRANS_ISMANUAL" /> @Html.DisplayNameFor(model => model.TRANS_ISMANUAL)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="TRANS_HASEXCEPTION" /> @Html.DisplayNameFor(model => model.TRANS_HASEXCEPTION)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_SOURCE_TYPE" class="control-label"></label>
+                <select asp-for="TRANS_SOURCE_TYPE" class="form-control" >
+                    <option>Transaction source type...</option>
+                    <option>CGL</option>
+                    <option>LNG</option>
+                    <option>Other</option>
+                </select>
+                <span asp-validation-for="TRANS_SOURCE_TYPE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_ADJUSTED_PRICE" class="control-label"></label>
+                <input asp-for="TRANS_ADJUSTED_PRICE" class="form-control" />
+                <span asp-validation-for="TRANS_ADJUSTED_PRICE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_FACILITY_CODE" class="control-label"></label>
+                <select asp-for="TRANS_FACILITY_CODE" class="form-control" asp-items="@Html.GetEnumSelectList<Transaction.FacilityCode>()">
+                    <option>Transaction facility code...</option>
+                 
+
+                </select>
+                <span asp-validation-for="TRANS_FACILITY_CODE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_TONNES" class="control-label"></label>
+                <input asp-for="TRANS_TONNES" class="form-control" />
+                <span asp-validation-for="TRANS_TONNES" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_CUBIC_METERS" class="control-label"></label>
+                <input asp-for="TRANS_CUBIC_METERS" class="form-control" />
+                <span asp-validation-for="TRANS_CUBIC_METERS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_IN_SERVICE_AREA" class="control-label"></label>
+                <select asp-for="TRANS_IN_SERVICE_AREA" class="form-control" >
+                    <option>Transaction service area</option>
+                    <option>In</option>
+                    <option>Internal</option>
+                    <option>Out</option>
+                    <option>NA</option>
+                </select>
+                <span asp-validation-for="TRANS_IN_SERVICE_AREA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_ASC_NON_ASC" class="control-label"></label>
+                <select asp-for="TRANS_ASC_NON_ASC" class="form-control" >
+                    <option>Transaction ASC Non ASC...</option>
+                    <option>ASC</option>
+                    <option>NonASC</option>
+                    <option>NA</option>
+                </select>
+                <span asp-validation-for="TRANS_ASC_NON_ASC" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_FUNCTION" class="control-label"></label>
+                <select asp-for="TRANS_FUNCTION" class="form-control" >
+                    <option>Function type...</option>
+                    <option>Consolidated</option>
+                    <option>Curbside</option>
+                    <option>External</option>
+                    <option>Operational</option>
+                    <option>Oper_Internal</option>
+                    <option>Transaction</option>
+                     <option>NA</option>
+                </select>
+                <span asp-validation-for="TRANS_FUNCTION" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_CURBSIDE_AREA" class="control-label"></label>
+                <select asp-for="TRANS_CURBSIDE_AREA" class="form-control" >
+                    <option>Curbside Area...</option>
+                    <option>Kitselas</option>
+                    <option>Kitsumkalum</option>
+                    <option>Kitvanga</option>
+                    <option>RDKS</option>
+                    <option>Stewart</option>
+                    <option>Terrace</option>
+                     <option>NA</option>
+                </select>
+                <span asp-validation-for="TRANS_CURBSIDE_AREA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_CURBSIDE_STREAM" class="control-label"></label>
+                <select asp-for="TRANS_CURBSIDE_STREAM" class="form-control" >
+                    <option>Curbside Stream...</option>
+                    <option>Organics</option>
+                    <option>Recycle</option>
+                    <option>Refuse</option>
+                    <option>NA</option>
+                </select>
+                <span asp-validation-for="TRANS_CURBSIDE_STREAM" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_ANNUAL_REPORTING_GROUP" class="control-label"></label>
+                <input asp-for="TRANS_ANNUAL_REPORTING_GROUP" class="form-control" />
+                <span asp-validation-for="TRANS_ANNUAL_REPORTING_GROUP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_ANNUAL_REPORTING_SOURCE" class="control-label"></label>
+                <input asp-for="TRANS_ANNUAL_REPORTING_SOURCE" class="form-control" />
+                <span asp-validation-for="TRANS_ANNUAL_REPORTING_SOURCE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_SERVICE_AREA" class="control-label"></label>
+                <select asp-for="TRANS_SERVICE_AREA" class="form-control" >
+                    <option>Service area...</option>
+                    <option>HazeltonHwy37N</option>
+                    <option>TerraceArea</option>
+                    <option>NA</option>
+                </select>
+                <span asp-validation-for="TRANS_SERVICE_AREA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+            <div>
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

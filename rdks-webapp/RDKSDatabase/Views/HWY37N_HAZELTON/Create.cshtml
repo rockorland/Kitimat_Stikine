@@ -1,0 +1,73 @@
+﻿@model RDKSDatabase.Models.HWY37N_HAZELTON
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>HWY37N_HAZELTON</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="HWY_HAZ_DATE" class="control-label"></label>
+                <input asp-for="HWY_HAZ_DATE" class="form-control" />
+                <span asp-validation-for="HWY_HAZ_DATE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_HAZ_EST_OCC_TONNES" class="control-label"></label>
+                <input asp-for="HWY_HAZ_EST_OCC_TONNES" class="form-control" />
+                <span asp-validation-for="HWY_HAZ_EST_OCC_TONNES" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_HAZ_OCC_BIN_BILLING" class="control-label"></label>
+                <input asp-for="HWY_HAZ_OCC_BIN_BILLING" class="form-control" />
+                <span asp-validation-for="HWY_HAZ_OCC_BIN_BILLING" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_HAZ_SCRAP_METAL_TONNES" class="control-label"></label>
+                <input asp-for="HWY_HAZ_SCRAP_METAL_TONNES" class="form-control" />
+                <span asp-validation-for="HWY_HAZ_SCRAP_METAL_TONNES" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_HAZ_TIRE_COUNTS" class="control-label"></label>
+                <input asp-for="HWY_HAZ_TIRE_COUNTS" class="form-control" />
+                <span asp-validation-for="HWY_HAZ_TIRE_COUNTS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_HAZ_TIRE_COLLECTION_CHARGES" class="control-label"></label>
+                <input asp-for="HWY_HAZ_TIRE_COLLECTION_CHARGES" class="form-control" />
+                <span asp-validation-for="HWY_HAZ_TIRE_COLLECTION_CHARGES" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_HAZ_FREON_REMOVAL_CHARGES" class="control-label"></label>
+                <input asp-for="HWY_HAZ_FREON_REMOVAL_CHARGES" class="form-control" />
+                <span asp-validation-for="HWY_HAZ_FREON_REMOVAL_CHARGES" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_HAZ_MARR_INCOME" class="control-label"></label>
+                <input asp-for="HWY_HAZ_MARR_INCOME" class="form-control" />
+                <span asp-validation-for="HWY_HAZ_MARR_INCOME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_HAZ_ABC_INCOME" class="control-label"></label>
+                <input asp-for="HWY_HAZ_ABC_INCOME" class="form-control" />
+                <span asp-validation-for="HWY_HAZ_ABC_INCOME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

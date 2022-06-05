@@ -1,0 +1,98 @@
+﻿@model RDKSDatabase.Models.Validation
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Validation</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="VALID_IMPORT_CODE" class="control-label"></label>
+                <input asp-for="VALID_IMPORT_CODE" class="form-control" />
+                <span asp-validation-for="VALID_IMPORT_CODE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VALID_CODE" class="control-label"></label>
+                <input asp-for="VALID_CODE" class="form-control" />
+                <span asp-validation-for="VALID_CODE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VALID_MATERIAL_NAME" class="control-label"></label>
+                <input asp-for="VALID_MATERIAL_NAME" class="form-control" />
+                <span asp-validation-for="VALID_MATERIAL_NAME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VALID_IN_AND_OUT" class="control-label"></label>
+                <input asp-for="VALID_IN_AND_OUT" class="form-control" />
+                <span asp-validation-for="VALID_IN_AND_OUT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VALID_AIRSPACE_OR_NONAIRSPACE" class="control-label"></label>
+                <input asp-for="VALID_AIRSPACE_OR_NONAIRSPACE" class="form-control" />
+                <span asp-validation-for="VALID_AIRSPACE_OR_NONAIRSPACE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VALID_FUNCTION" class="control-label"></label>
+                <input asp-for="VALID_FUNCTION" class="form-control" />
+                <span asp-validation-for="VALID_FUNCTION" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VALID_FACILITY" class="control-label"></label>
+                <input asp-for="VALID_FACILITY" class="form-control" />
+                <span asp-validation-for="VALID_FACILITY" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VALID_MATERIAL_GROUP" class="control-label"></label>
+                <input asp-for="VALID_MATERIAL_GROUP" class="form-control" />
+                <span asp-validation-for="VALID_MATERIAL_GROUP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VALID_CURBSIED_AREA" class="control-label"></label>
+                <input asp-for="VALID_CURBSIED_AREA" class="form-control" />
+                <span asp-validation-for="VALID_CURBSIED_AREA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VALID_CURBSIDE_STREAM" class="control-label"></label>
+                <input asp-for="VALID_CURBSIDE_STREAM" class="form-control" />
+                <span asp-validation-for="VALID_CURBSIDE_STREAM" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VALID_FR_ANNUAL_REPORTING_GROUP" class="control-label"></label>
+                <input asp-for="VALID_FR_ANNUAL_REPORTING_GROUP" class="form-control" />
+                <span asp-validation-for="VALID_FR_ANNUAL_REPORTING_GROUP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VALID_FR_ANNUAL_REPORT_WASTE_TYPE" class="control-label"></label>
+                <input asp-for="VALID_FR_ANNUAL_REPORT_WASTE_TYPE" class="form-control" />
+                <span asp-validation-for="VALID_FR_ANNUAL_REPORT_WASTE_TYPE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VALID_TIPPING_RATE" class="control-label"></label>
+                <input asp-for="VALID_TIPPING_RATE" class="form-control" />
+                <span asp-validation-for="VALID_TIPPING_RATE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VALID_SERVICE_AREA" class="control-label"></label>
+                <input asp-for="VALID_SERVICE_AREA" class="form-control" />
+                <span asp-validation-for="VALID_SERVICE_AREA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

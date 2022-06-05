@@ -1,0 +1,96 @@
+﻿@model RDKSDatabase.Models.Customer
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Customer</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CUS_ACCNUM)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CUS_ACCNUM)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CUS_COMPNAME)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CUS_COMPNAME)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CUS_FNAME)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CUS_FNAME)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CUS_LNAME)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CUS_LNAME)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CUS_PHONE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CUS_PHONE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CUS_ALT_PHONE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CUS_ALT_PHONE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CUS_EMAIL)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CUS_EMAIL)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CUS_ALT_EMAIL)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CUS_ALT_EMAIL)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CUS_FR)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CUS_FR)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CUS_TTS)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CUS_TTS)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CUS_MEZ)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CUS_MEZ)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CUS_DEACTIVATED_COUNT)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CUS_DEACTIVATED_COUNT)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CUS_NOTE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CUS_NOTE)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.CUS_ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

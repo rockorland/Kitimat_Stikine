@@ -1,0 +1,169 @@
+﻿@model RDKSDatabase.Models.Transaction
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Transaction</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TRANS_NUM" />
+            <div class="form-group">
+                <label asp-for="CUS_ID" class="control-label"></label>
+                <input asp-for="CUS_ID" class="form-control" asp-items="ViewBag.CUS_ID"></input>
+                <span asp-validation-for="CUS_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LICENSE_PLATE" class="control-label"></label>
+                <input asp-for="LICENSE_PLATE" class="form-control" />
+                <span asp-validation-for="LICENSE_PLATE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_COMPLETION_DATE" class="control-label"></label>
+                <input asp-for="TRANS_COMPLETION_DATE" class="form-control" />
+                <span asp-validation-for="TRANS_COMPLETION_DATE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_COMPLETION_TIME" class="control-label"></label>
+                <input asp-for="TRANS_COMPLETION_TIME" class="form-control" />
+                <span asp-validation-for="TRANS_COMPLETION_TIME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_LOAD_NUM" class="control-label"></label>
+                <input asp-for="TRANS_LOAD_NUM" class="form-control" />
+                <span asp-validation-for="TRANS_LOAD_NUM" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_NETWEIGHT" class="control-label"></label>
+                <input asp-for="TRANS_NETWEIGHT" class="form-control" />
+                <span asp-validation-for="TRANS_NETWEIGHT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_TOTALPRICE" class="control-label"></label>
+                <input asp-for="TRANS_TOTALPRICE" class="form-control" />
+                <span asp-validation-for="TRANS_TOTALPRICE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_HAULER" class="control-label"></label>
+                <input asp-for="TRANS_HAULER" class="form-control" />
+                <span asp-validation-for="TRANS_HAULER" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="TRANS_DRIVER_EXEMPT_STATUS" /> @Html.DisplayNameFor(model => model.TRANS_DRIVER_EXEMPT_STATUS)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="VALID_IMPORT_CODE" class="control-label"></label>
+                <input asp-for="VALID_IMPORT_CODE" class="form-control" />
+                <span asp-validation-for="VALID_IMPORT_CODE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_CONTRACT" class="control-label"></label>
+                <input asp-for="TRANS_CONTRACT" class="form-control" />
+                <span asp-validation-for="TRANS_CONTRACT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_OPERATION" class="control-label"></label>
+                <input asp-for="TRANS_OPERATION" class="form-control" />
+                <span asp-validation-for="TRANS_OPERATION" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_STATUS" class="control-label"></label>
+                <input asp-for="TRANS_STATUS" class="form-control" />
+                <span asp-validation-for="TRANS_STATUS" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="TRANS_ISMANUAL" /> @Html.DisplayNameFor(model => model.TRANS_ISMANUAL)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="TRANS_HASEXCEPTION" /> @Html.DisplayNameFor(model => model.TRANS_HASEXCEPTION)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_SOURCE_TYPE" class="control-label"></label>
+                <input asp-for="TRANS_SOURCE_TYPE" class="form-control" />
+                <span asp-validation-for="TRANS_SOURCE_TYPE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_ADJUSTED_PRICE" class="control-label"></label>
+                <input asp-for="TRANS_ADJUSTED_PRICE" class="form-control" />
+                <span asp-validation-for="TRANS_ADJUSTED_PRICE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_FACILITY_CODE" class="control-label"></label>
+                <input asp-for="TRANS_FACILITY_CODE" class="form-control" />
+                <span asp-validation-for="TRANS_FACILITY_CODE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_TONNES" class="control-label"></label>
+                <input asp-for="TRANS_TONNES" class="form-control" />
+                <span asp-validation-for="TRANS_TONNES" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_CUBIC_METERS" class="control-label"></label>
+                <input asp-for="TRANS_CUBIC_METERS" class="form-control" />
+                <span asp-validation-for="TRANS_CUBIC_METERS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_IN_SERVICE_AREA" class="control-label"></label>
+                <input asp-for="TRANS_IN_SERVICE_AREA" class="form-control" />
+                <span asp-validation-for="TRANS_IN_SERVICE_AREA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_ASC_NON_ASC" class="control-label"></label>
+                <input asp-for="TRANS_ASC_NON_ASC" class="form-control" />
+                <span asp-validation-for="TRANS_ASC_NON_ASC" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_FUNCTION" class="control-label"></label>
+                <input asp-for="TRANS_FUNCTION" class="form-control" />
+                <span asp-validation-for="TRANS_FUNCTION" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_CURBSIDE_AREA" class="control-label"></label>
+                <input asp-for="TRANS_CURBSIDE_AREA" class="form-control" />
+                <span asp-validation-for="TRANS_CURBSIDE_AREA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_CURBSIDE_STREAM" class="control-label"></label>
+                <input asp-for="TRANS_CURBSIDE_STREAM" class="form-control" />
+                <span asp-validation-for="TRANS_CURBSIDE_STREAM" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_ANNUAL_REPORTING_GROUP" class="control-label"></label>
+                <input asp-for="TRANS_ANNUAL_REPORTING_GROUP" class="form-control" />
+                <span asp-validation-for="TRANS_ANNUAL_REPORTING_GROUP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_ANNUAL_REPORTING_SOURCE" class="control-label"></label>
+                <input asp-for="TRANS_ANNUAL_REPORTING_SOURCE" class="form-control" />
+                <span asp-validation-for="TRANS_ANNUAL_REPORTING_SOURCE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TRANS_SERVICE_AREA" class="control-label"></label>
+                <input asp-for="TRANS_SERVICE_AREA" class="form-control" />
+                <span asp-validation-for="TRANS_SERVICE_AREA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

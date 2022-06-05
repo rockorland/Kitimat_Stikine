@@ -1,0 +1,139 @@
+﻿@model RDKSDatabase.Models.HWY37N_STEWART
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>HWY37N_STEWART</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="HWY_STE_DATE" />
+            <div class="form-group">
+                <label asp-for="HWY_STE_OCC_TONNES" class="control-label"></label>
+                <input asp-for="HWY_STE_OCC_TONNES" class="form-control" />
+                <span asp-validation-for="HWY_STE_OCC_TONNES" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_STE_BANDSTRA_OCC_HAULING" class="control-label"></label>
+                <input asp-for="HWY_STE_BANDSTRA_OCC_HAULING" class="form-control" />
+                <span asp-validation-for="HWY_STE_BANDSTRA_OCC_HAULING" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_STE_OCC_TOTAL" class="control-label"></label>
+                <input asp-for="HWY_STE_OCC_TOTAL" class="form-control" />
+                <span asp-validation-for="HWY_STE_OCC_TOTAL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_STE_RECYCLE_BC_TONNAGE" class="control-label"></label>
+                <input asp-for="HWY_STE_RECYCLE_BC_TONNAGE" class="form-control" />
+                <span asp-validation-for="HWY_STE_RECYCLE_BC_TONNAGE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_STE_CESA_TONNES" class="control-label"></label>
+                <input asp-for="HWY_STE_CESA_TONNES" class="form-control" />
+                <span asp-validation-for="HWY_STE_CESA_TONNES" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_STE_EPRA_TONNES" class="control-label"></label>
+                <input asp-for="HWY_STE_EPRA_TONNES" class="form-control" />
+                <span asp-validation-for="HWY_STE_EPRA_TONNES" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_STE_LIGHT_RECYCLE_COUNTS" class="control-label"></label>
+                <input asp-for="HWY_STE_LIGHT_RECYCLE_COUNTS" class="form-control" />
+                <span asp-validation-for="HWY_STE_LIGHT_RECYCLE_COUNTS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_STE_PAINT_RECYCLE_COUNTS" class="control-label"></label>
+                <input asp-for="HWY_STE_PAINT_RECYCLE_COUNTS" class="form-control" />
+                <span asp-validation-for="HWY_STE_PAINT_RECYCLE_COUNTS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_STE_SCRAP_METAL_MARR_TONNE_EST" class="control-label"></label>
+                <input asp-for="HWY_STE_SCRAP_METAL_MARR_TONNE_EST" class="form-control" />
+                <span asp-validation-for="HWY_STE_SCRAP_METAL_MARR_TONNE_EST" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_STE_LAB_TONNES" class="control-label"></label>
+                <input asp-for="HWY_STE_LAB_TONNES" class="form-control" />
+                <span asp-validation-for="HWY_STE_LAB_TONNES" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_STE_TIRE_COUNTS" class="control-label"></label>
+                <input asp-for="HWY_STE_TIRE_COUNTS" class="form-control" />
+                <span asp-validation-for="HWY_STE_TIRE_COUNTS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_STE_TIRE_CHARGES" class="control-label"></label>
+                <input asp-for="HWY_STE_TIRE_CHARGES" class="form-control" />
+                <span asp-validation-for="HWY_STE_TIRE_CHARGES" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_STE_FREON_REMOVAL_CHARGES" class="control-label"></label>
+                <input asp-for="HWY_STE_FREON_REMOVAL_CHARGES" class="form-control" />
+                <span asp-validation-for="HWY_STE_FREON_REMOVAL_CHARGES" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_STE_RECYCLE_BC_INCOME" class="control-label"></label>
+                <input asp-for="HWY_STE_RECYCLE_BC_INCOME" class="form-control" />
+                <span asp-validation-for="HWY_STE_RECYCLE_BC_INCOME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_STE_CESA_INCOME" class="control-label"></label>
+                <input asp-for="HWY_STE_CESA_INCOME" class="form-control" />
+                <span asp-validation-for="HWY_STE_CESA_INCOME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_STE_EPRA_INCOME" class="control-label"></label>
+                <input asp-for="HWY_STE_EPRA_INCOME" class="form-control" />
+                <span asp-validation-for="HWY_STE_EPRA_INCOME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_STE_LIGHT_RECYCLE_INCOME" class="control-label"></label>
+                <input asp-for="HWY_STE_LIGHT_RECYCLE_INCOME" class="form-control" />
+                <span asp-validation-for="HWY_STE_LIGHT_RECYCLE_INCOME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_STE_RECYCLE_INCOME" class="control-label"></label>
+                <input asp-for="HWY_STE_RECYCLE_INCOME" class="form-control" />
+                <span asp-validation-for="HWY_STE_RECYCLE_INCOME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_STE_MARR_INCOME" class="control-label"></label>
+                <input asp-for="HWY_STE_MARR_INCOME" class="form-control" />
+                <span asp-validation-for="HWY_STE_MARR_INCOME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_STE_LAB_INCOME" class="control-label"></label>
+                <input asp-for="HWY_STE_LAB_INCOME" class="form-control" />
+                <span asp-validation-for="HWY_STE_LAB_INCOME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_STE_TOTAL_TONNES_EPR" class="control-label"></label>
+                <input asp-for="HWY_STE_TOTAL_TONNES_EPR" class="form-control" />
+                <span asp-validation-for="HWY_STE_TOTAL_TONNES_EPR" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HWY_STE_NET_INCOME" class="control-label"></label>
+                <input asp-for="HWY_STE_NET_INCOME" class="form-control" />
+                <span asp-validation-for="HWY_STE_NET_INCOME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

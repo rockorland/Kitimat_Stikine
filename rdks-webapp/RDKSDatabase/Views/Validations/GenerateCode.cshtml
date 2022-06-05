@@ -1,0 +1,93 @@
+﻿@model RDKSDatabase.Models.ViewModels.ImportCode
+@using RDKSDatabase.Models
+
+@{
+    ViewData["Title"] = "Generate Import Codes";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="GenerateCode" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Enter the material group : <input type="text" name="material_group" value="@ViewData["material_group"]" />
+            Enter the facility : <input type="text" name="facility" value="@ViewData["facility"]" />
+            <input type="submit" value="Search" class="btn btn-default" style="background: lightblue"/> 
+        </p>
+    </div>
+</form>
+
+<form>
+    <input asp-action="Index" type="submit" value="Back to full list" class="btn btn-default" style="background: lightblue"/>
+</form>
+
+@if (ViewData["recordFound"].Equals(true))
+{
+    Validation validation = Model.Results.First();
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => validation.VALID_IMPORT_CODE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => validation.VALID_MATERIAL_NAME)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => validation.VALID_IN_AND_OUT)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => validation.VALID_AIRSPACE_OR_NONAIRSPACE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => validation.VALID_FUNCTION)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => validation.VALID_FACILITY)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => validation.VALID_MATERIAL_GROUP)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => validation.VALID_TIPPING_RATE)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model.Results) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VALID_IMPORT_CODE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VALID_MATERIAL_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VALID_IN_AND_OUT)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VALID_AIRSPACE_OR_NONAIRSPACE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VALID_FUNCTION)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VALID_FACILITY)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VALID_MATERIAL_GROUP)
+                </td>           
+                <td>
+                    @Html.DisplayFor(modelItem => item.VALID_TIPPING_RATE)
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>
+        No Records Found!
+    </p>
+}

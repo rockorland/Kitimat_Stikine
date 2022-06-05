@@ -1,0 +1,87 @@
+﻿@model IEnumerable<RDKSDatabase.Models.HWY37N_STEWART>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Hwy37N Stewart</h1>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Start date: <input type="date" name="SearchString1" value="@ViewData["CurrentFilter1"]" />
+            End date: <input type="date" name="SearchString2" value="@ViewData["CurrentFilter2"]" />
+            <input type="submit" value="Search" class="btn btn-default" style="background: lightblue"/>
+        </p>
+    </div>
+</form>
+
+<form>
+    <input asp-action="Create" type="submit" value="Create new record" class="btn btn-default" style="background: lightblue"/>
+</form>
+<br />
+<form>
+    <input asp-action="Index" type="submit" value="Back to full list" class="btn btn-default" style="background: lightblue"/>
+</form>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]">@Html.DisplayNameFor(model => model.HWY_STE_DATE)</a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HWY_STE_OCC_TONNES)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HWY_STE_BANDSTRA_OCC_HAULING)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HWY_STE_OCC_TOTAL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HWY_STE_RECYCLE_BC_TONNAGE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HWY_STE_TOTAL_TONNES_EPR)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HWY_STE_NET_INCOME)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HWY_STE_DATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HWY_STE_OCC_TONNES)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HWY_STE_BANDSTRA_OCC_HAULING)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HWY_STE_OCC_TOTAL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HWY_STE_RECYCLE_BC_TONNAGE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HWY_STE_TOTAL_TONNES_EPR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HWY_STE_NET_INCOME)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.HWY_STE_DATE">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.HWY_STE_DATE">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.HWY_STE_DATE">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

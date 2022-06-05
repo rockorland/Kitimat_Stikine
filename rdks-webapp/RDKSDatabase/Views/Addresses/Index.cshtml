@@ -1,0 +1,74 @@
+﻿@model IEnumerable<RDKSDatabase.Models.Address>
+
+@{
+    ViewData["Title"] = "Addresses";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Search by City: <input type="text" name="SearchString1" value="@ViewData["CurrentFilter1"]" />
+            Search by Province: <input type="text" name="SearchString2" value="@ViewData["CurrentFilter2"]" />
+            <input type="submit" value="Search" class="btn btn-default" style="background: lightblue"/>
+        </p>
+    </div>
+</form>
+
+<form>
+    <input asp-action="Create" type="submit" value="Create new record" class="btn btn-default" style="background: lightblue"/>
+</form>
+<br />
+<form>
+    <input asp-action="Index" type="submit" value="Back to full list" class="btn btn-default" style="background: lightblue"/>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ADDR_STREET)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ADDR_CITY)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ADDR_PROV)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ADDR_POCODE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CUS_ID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ADDR_STREET)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ADDR_CITY)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ADDR_PROV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ADDR_POCODE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CUS_ID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ADDR_ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ADDR_ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ADDR_ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

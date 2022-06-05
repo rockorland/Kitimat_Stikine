@@ -1,0 +1,64 @@
+﻿@model RDKSDatabase.Models.ABCRecycling
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ABCRecycling</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ABCDateID" class="control-label"></label>
+                <input asp-for="ABCDateID" class="form-control" />
+                <span asp-validation-for="ABCDateID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ABC_LOCATION" class="control-label"></label>
+                <input asp-for="ABC_LOCATION" class="form-control" />
+                <span asp-validation-for="ABC_LOCATION" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ABC_MATERIAL" class="control-label"></label>
+                <input asp-for="ABC_MATERIAL" class="form-control" />
+                <span asp-validation-for="ABC_MATERIAL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TOTAL_POUND_NETWEIGHT" class="control-label"></label>
+                <input asp-for="TOTAL_POUND_NETWEIGHT" class="form-control" />
+                <span asp-validation-for="TOTAL_POUND_NETWEIGHT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TOTAL_TONNAGE_NETWEIGHT" class="control-label"></label>
+                <input asp-for="TOTAL_TONNAGE_NETWEIGHT" class="form-control" />
+                <span asp-validation-for="TOTAL_TONNAGE_NETWEIGHT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TOTAL_TONNAGE_MATERIAL" class="control-label"></label>
+                <input asp-for="TOTAL_TONNAGE_MATERIAL" class="form-control" />
+                <span asp-validation-for="TOTAL_TONNAGE_MATERIAL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ABC_COMPLETED" class="control-label"></label>
+                <input asp-for="ABC_COMPLETED" class="form-control" />
+                <span asp-validation-for="ABC_COMPLETED" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+            <div>
+                <input asp-action="Index" type="submit" value="Back to full list" class="btn btn-default" style="background: lightblue"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,96 @@
+﻿@model RDKSDatabase.Models.Validation
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Validation</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VALID_CODE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VALID_CODE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VALID_MATERIAL_NAME)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VALID_MATERIAL_NAME)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VALID_IN_AND_OUT)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VALID_IN_AND_OUT)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VALID_AIRSPACE_OR_NONAIRSPACE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VALID_AIRSPACE_OR_NONAIRSPACE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VALID_FUNCTION)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VALID_FUNCTION)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VALID_FACILITY)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VALID_FACILITY)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VALID_MATERIAL_GROUP)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VALID_MATERIAL_GROUP)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VALID_CURBSIED_AREA)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VALID_CURBSIED_AREA)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VALID_CURBSIDE_STREAM)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VALID_CURBSIDE_STREAM)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VALID_FR_ANNUAL_REPORTING_GROUP)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VALID_FR_ANNUAL_REPORTING_GROUP)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VALID_FR_ANNUAL_REPORT_WASTE_TYPE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VALID_FR_ANNUAL_REPORT_WASTE_TYPE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VALID_TIPPING_RATE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VALID_TIPPING_RATE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VALID_SERVICE_AREA)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VALID_SERVICE_AREA)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.VALID_IMPORT_CODE">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

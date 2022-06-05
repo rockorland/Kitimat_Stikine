@@ -1,0 +1,326 @@
+﻿@model RDKSDatabase.Models.ViewModels.TransactionIndexData
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+@{
+        Transaction transaction = Model.Transaction;
+        Customer customer = Model.Customer;
+        Vehicle vehicle = Model.Vehicle;
+<div>
+    <h4>Transaction</h4>
+    <hr />
+
+      <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(t=>transaction.LICENSE_PLATE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(t=>transaction.LICENSE_PLATE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(t=>transaction.TRANS_COMPLETION_DATE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(t=>transaction.TRANS_COMPLETION_DATE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(t=>transaction.TRANS_COMPLETION_TIME)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(t=>transaction.TRANS_COMPLETION_TIME)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(t=>transaction.TRANS_LOAD_NUM)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(t=>transaction.TRANS_LOAD_NUM)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(t=>transaction.TRANS_NETWEIGHT)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(t=>transaction.TRANS_NETWEIGHT)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(t=>transaction.TRANS_TOTALPRICE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(t=>transaction.TRANS_TOTALPRICE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(t=>transaction.TRANS_HAULER)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(t=>transaction.TRANS_HAULER)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(t=>transaction.TRANS_DRIVER_EXEMPT_STATUS)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(t=>transaction.TRANS_DRIVER_EXEMPT_STATUS)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(t=>transaction.VALID_IMPORT_CODE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(t=>transaction.VALID_IMPORT_CODE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(t=>transaction.TRANS_CONTRACT)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(t=>transaction.TRANS_CONTRACT)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(t=>transaction.TRANS_OPERATION)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(t=>transaction.TRANS_OPERATION)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(t=>transaction.TRANS_STATUS)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(t=>transaction.TRANS_STATUS)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(t=>transaction.TRANS_ISMANUAL)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(t=>transaction.TRANS_ISMANUAL)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(t=>transaction.TRANS_HASEXCEPTION)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(t=>transaction.TRANS_HASEXCEPTION)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => transaction.TRANS_SOURCE_TYPE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => transaction.TRANS_SOURCE_TYPE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => transaction.TRANS_ADJUSTED_PRICE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => transaction.TRANS_ADJUSTED_PRICE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => transaction.TRANS_FACILITY_CODE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => transaction.TRANS_FACILITY_CODE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => transaction.TRANS_TONNES)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => transaction.TRANS_TONNES)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => transaction.TRANS_CUBIC_METERS)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => transaction.TRANS_CUBIC_METERS)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => transaction.TRANS_IN_SERVICE_AREA)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => transaction.TRANS_IN_SERVICE_AREA)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => transaction.TRANS_ASC_NON_ASC)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => transaction.TRANS_ASC_NON_ASC)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => transaction.TRANS_FUNCTION)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => transaction.TRANS_FUNCTION)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => transaction.TRANS_CURBSIDE_AREA)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => transaction.TRANS_CURBSIDE_AREA)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => transaction.TRANS_CURBSIDE_STREAM)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => transaction.TRANS_CURBSIDE_STREAM)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => transaction.TRANS_ANNUAL_REPORTING_GROUP)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => transaction.TRANS_ANNUAL_REPORTING_GROUP)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => transaction.TRANS_ANNUAL_REPORTING_SOURCE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => transaction.TRANS_ANNUAL_REPORTING_SOURCE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => transaction.TRANS_SERVICE_AREA)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => transaction.TRANS_SERVICE_AREA)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => transaction.CUS_ID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => transaction.CUS_ID)
+        </dd>
+    </dl>  
+   
+    
+</div>
+
+<div>
+    <h4>Customer</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => customer.CUS_ACCNUM)
+        </dt>
+         <dd class = "col-sm-10">
+            @Html.DisplayFor(model => customer.CUS_ACCNUM)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => customer.CUS_COMPNAME)
+        </dt>
+         <dd class = "col-sm-10">
+            @Html.DisplayFor(model => customer.CUS_COMPNAME)
+        </dd>
+        <dt class = "col-sm-2">
+           @Html.DisplayNameFor(model => customer.CUS_FNAME)
+        </dt>
+        <dd class = "col-sm-10">
+           @Html.DisplayFor(model => customer.CUS_FNAME)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => customer.CUS_LNAME)
+        </dt>
+          <dd class = "col-sm-10">
+            @Html.DisplayFor(model => customer.CUS_LNAME)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => customer.CUS_PHONE)
+        </dt>
+         <dd class = "col-sm-10">
+            @Html.DisplayFor(model => customer.CUS_PHONE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => customer.CUS_ALT_PHONE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => customer.CUS_ALT_PHONE)
+        </dd>
+        
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => customer.CUS_ALT_EMAIL)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => customer.CUS_ALT_EMAIL)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => customer.Addresses)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => customer.Addresses)
+        </dd>
+        <dt class = "col-sm-2">
+           @Html.DisplayNameFor(model => customer.CUS_FR)
+        </dt>
+        <dd class = "col-sm-10">
+           @Html.DisplayFor(model => customer.CUS_FR)
+        </dd>
+        <dt class = "col-sm-2">
+           @Html.DisplayNameFor(model => customer.CUS_TTS)
+        </dt>
+         <dd class = "col-sm-10">
+           @Html.DisplayFor(model => customer.CUS_TTS)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => customer.CUS_MEZ)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => customer.CUS_MEZ)
+        </dd>
+        <dt class = "col-sm-2">
+           @Html.DisplayNameFor(model => customer.CUS_DEACTIVATED_COUNT)
+        </dt>
+         <dd class = "col-sm-10">
+           @Html.DisplayFor(model => customer.CUS_DEACTIVATED_COUNT)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => customer.CUS_NOTE)
+        </dt> 
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => customer.CUS_NOTE)
+        </dd> 
+    </dl>
+</div>
+
+<div>
+    <h4>Vehicle</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => vehicle.LICENSE_PLATE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => vehicle.LICENSE_PLATE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => vehicle.CUS_ID)
+        </dt>
+          <dd class = "col-sm-10">
+            @Html.DisplayFor(model => vehicle.CUS_ID)
+        </dd>
+        <dt class = "col-sm-2">
+           @Html.DisplayNameFor(model => vehicle.BADGE)
+        </dt>
+        <dd class = "col-sm-10">
+           @Html.DisplayFor(model => vehicle.BADGE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => vehicle.DESCRIPTION)
+        </dt>
+         <dd class = "col-sm-10">
+            @Html.DisplayFor(model => vehicle.DESCRIPTION)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => vehicle.NOTES)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => vehicle.NOTES)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => vehicle.NOTES_2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => vehicle.NOTES_2)
+        </dd>
+    </dl>
+</div>
+}
+
+<div>
+    <a asp-action="Edit" asp-route-id="@transaction.TRANS_NUM">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
